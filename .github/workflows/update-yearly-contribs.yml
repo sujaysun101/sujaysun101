@@ -1,0 +1,42 @@
+name: Update Yearly Contribution Stats
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "15 0 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  yearly-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: pip install requests python-dateutil
+
+      - name: Run contribution fetcher
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_USER: sujaysun101
+        run: |
+          python scripts/update_contributions.py
+
+      - name: Commit & push if changed
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add README.md
+            git commit -m "chore: update yearly contribution snapshot"
+            git push
+          else
+            echo "No changes to commit."
