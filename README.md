@@ -25,9 +25,9 @@
 
 <!-- YEARLY_CONTRIBUTIONS_START -->
 ### 🗓 Yearly Contribution Snapshot
-2025 (YTD): 144 total contributions (Commits: 119 | PRs: 6 | Issues: 0 | Reviews: 0)
-2024 (Full Year): 0 total contributions (Commits: 0 | PRs: 0 | Issues: 0 | Reviews: 0)
-Last updated: 2025-12-31 02:23 UTC
+2026 (YTD): 0 total contributions (Commits: 0 | PRs: 0 | Issues: 0 | Reviews: 0)
+2025 (Full Year): 144 total contributions (Commits: 119 | PRs: 6 | Issues: 0 | Reviews: 0)
+Last updated: 2026-01-01 02:36 UTC
 <!-- YEARLY_CONTRIBUTIONS_END -->
 
 ---
